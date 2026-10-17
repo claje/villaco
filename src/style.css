@@ -402,3 +402,68 @@ body {
   height: 55px;
   object-fit: contain;
 }
+
+.ccs-team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.ccs-team-panel {
+  padding: 24px;
+  background: white;
+  border: 1px solid #dceaff;
+  border-radius: 14px;
+  box-shadow: 0 5px 22px #2030470d;
+}
+
+.ccs-team-panel > h3 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.ccs-team-panel > p {
+  color: #667386;
+  line-height: 1.6;
+}
+
+.ccs-member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.ccs-member-grid .ccs-faculty-card {
+  padding: 10px 4px;
+  box-shadow: none;
+}
+
+.ccs-member-grid .ccs-faculty-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ccs-member-grid .ccs-faculty-card h4 {
+  font-size: 13px;
+  margin: 10px 0 6px;
+}
+
+.ccs-member-grid .ccs-faculty-card p {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .ccs-team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .ccs-member-grid {
+    grid-template-columns: 1fr;
+  }
+}

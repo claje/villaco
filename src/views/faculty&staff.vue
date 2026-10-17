@@ -3,58 +3,62 @@
 import faculty1 from '../image/faculty1.jpg'
 import faculty2 from '../image/faculty2.jpg'
 import faculty3 from '../image/faculty3.jpg'
+import staff1 from '../image/staff1.jpg'
+import staff2 from '../image/staff2.jpg'
+import staff3 from '../image/staff3.jpg'
 </script>
 
 <template>
-  <section id="faculty" class="faculty">
-    <div class="section-heading">
-      <p>MEET OUR TEAM</p>
-      <h2>Faculty and Staff</h2>
-      <span>
-        Meet the people who support learning and development at CCS.
-      </span>
-    </div>
+  
+<!-- Section 3: Faculty & Staff -->
+<section id="faculty" class="ccs-section ccs-section-light">
+  <div class="ccs-section-heading">
+    <p class="ccs-eyebrow">MEET OUR TEAM</p>
+    <h2>Faculty &amp; Staff</h2>
+    <p>
+      Meet the people who support our students' learning and development.
+    </p>
+  </div>
 
-    <div class="department">
-      <h3>Faculty</h3>
+  <div class="ccs-team-grid">
+    <!-- Faculty -->
+    <div class="ccs-team-panel">
+      <h3>👥 Faculty</h3>
+      <p>Our dedicated educators and academic professionals.</p>
 
-      <div class="faculty-list">
-        <div class="faculty-card">
-          <img
-            class="faculty-photo"
-            :src="faculty1"
-            alt="Faculty member"
-          />
-          <h4>Shiela Young</h4>
-          <p>Department Head</p>
-        </div>
-
-        <div class="faculty-card">
-          <img
-            class="faculty-photo"
-            :src="faculty2"
-            alt="Faculty member"
-          />
-          <h4>Katrina Cruz</h4>
-          <p>Associate Professor</p>
-        </div>
+      <div class="ccs-member-grid">
+        <article
+          v-for="member in faculty"
+          :key="member.name"
+          class="ccs-faculty-card"
+        >
+          <img :src="member.image" :alt="member.name" />
+          <h4>{{ member.name }}</h4>
+          <p>{{ member.role }}</p>
+          <p>{{ member.department }}</p>
+        </article>
       </div>
     </div>
 
-    <div class="department">
-      <h3>Staff</h3>
+    <!-- Staff -->
+    <div class="ccs-team-panel">
+      <h3>👥 Staff</h3>
+      <p>Our support team helps the college run smoothly.</p>
 
-      <div class="faculty-list">
-        <div class="faculty-card">
-          <img
-            class="faculty-photo"
-            :src="faculty3"
-            alt="Staff member"
-          />
-          <h4>Arthur Tan</h4>
-          <p>Computer Laboratory Coordinator</p>
-        </div>
+      <div class="ccs-member-grid">
+        <article
+          v-for="member in staff"
+          :key="member.name"
+          class="ccs-faculty-card"
+        >
+          <img :src="member.image" :alt="member.name" />
+          <h4>{{ member.name }}</h4>
+          <p>{{ member.role }}</p>
+          <p>{{ member.department }}</p>
+        </article>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 </template>

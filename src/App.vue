@@ -9,6 +9,9 @@ import faculty3 from './image/faculty3.jpg'
 import cisco from './image/cisco.png'
 import lenovo from './image/lenovo.jpg'
 import oracle from './image/oracle.png'
+import staff1 from './image/staff1.jpg'
+import staff2 from './image/staff2.jpg'
+import staff3 from './image/staff3.jpg'
 
 const menuOpen = ref(false)
 
@@ -35,11 +38,49 @@ const programs = [
   }
 ]
 
+
 const faculty = [
-  { name: 'Faculty Member 1', image: faculty1 },
-  { name: 'Faculty Member 2', image: faculty2 },
-  { name: 'Faculty Member 3', image: faculty3 }
+  {
+    name: 'Shiela Yu',
+    role: 'Professor',
+    department: 'Computer Science',
+    image: faculty1
+  },
+  {
+    name: 'Ana Reyes',
+    role: 'Associate Professor',
+    department: 'Information Technology',
+    image: faculty2
+  },
+  {
+    name: 'James Cruz',
+    role: 'Assistant Professor',
+    department: 'Data Analytics',
+    image: faculty3
+  }
 ]
+
+const staff = [
+  {
+    name: 'Maria Lopez',
+    role: 'Administrative Officer',
+    department: 'College Operations',
+    image: staff1
+  },
+  {
+    name: 'Daniel Santos',
+    role: 'IT Support Specialist',
+    department: 'Technical Support',
+    image: staff2
+  },
+  {
+    name: 'Angela Rivera',
+    role: 'Laboratory Technician',
+    department: 'Computer Labs',
+    image: staff3
+  }
+]
+
 
 const partners = [
   { name: 'Cisco', image: cisco },
@@ -117,26 +158,58 @@ function closeMenu() {
         </div>
       </section>
 
-      <!-- Section 3: Faculty & Staff -->
-      <section id="faculty" class="ccs-section ccs-section-light">
-        <div class="ccs-section-heading">
-          <p class="ccs-eyebrow">MEET OUR TEAM</p>
-          <h2>Faculty &amp; Staff</h2>
-          <p>Meet the people who support our students' learning and development.</p>
-        </div>
+      
+<!-- Section 3: Faculty & Staff -->
+<section id="faculty" class="ccs-section ccs-section-light">
+  <div class="ccs-section-heading">
+    <p class="ccs-eyebrow">MEET OUR TEAM</p>
+    <h2>Faculty &amp; Staff</h2>
+    <p>Meet the people who support our students' learning and development.</p>
+  </div>
 
-        <div class="ccs-faculty-grid">
-          <article
-            v-for="member in faculty"
-            :key="member.name"
-            class="ccs-faculty-card"
-          >
-            <img :src="member.image" :alt="member.name" />
-            <h3>{{ member.name }}</h3>
-            <p>College of Computer Studies</p>
-          </article>
-        </div>
-      </section>
+  <div class="ccs-team-grid">
+
+    <!-- Faculty Panel -->
+    <div class="ccs-team-panel">
+      <h3>Faculty</h3>
+      <p>Our dedicated educators and academic professionals.</p>
+
+      <div class="ccs-member-grid">
+        <article
+          v-for="member in faculty"
+          :key="member.name"
+          class="ccs-faculty-card"
+        >
+          <img :src="member.image" :alt="member.name" />
+          <h4>{{ member.name }}</h4>
+          <p>{{ member.role }}</p>
+          <p>{{ member.department }}</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- Staff Panel -->
+    <div class="ccs-team-panel">
+      <h3>Staff</h3>
+      <p>Our support team helps the college run smoothly.</p>
+
+      <div class="ccs-member-grid">
+        <article
+          v-for="member in staff"
+          :key="member.name"
+          class="ccs-faculty-card"
+        >
+          <img :src="member.image" :alt="member.name" />
+          <h4>{{ member.name }}</h4>
+          <p>{{ member.role }}</p>
+          <p>{{ member.department }}</p>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       <!-- Section 4: Partnerships -->
       <section id="partnerships" class="ccs-section">
