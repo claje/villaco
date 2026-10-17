@@ -125,7 +125,7 @@ const menuOpen = ref(false)
   </div>
 
   <div class="department">
-    <h3>Department 1</h3>
+    <h3>Faculty</h3>
 
     <div class="faculty-list">
       <div class="faculty-card">
@@ -135,8 +135,7 @@ const menuOpen = ref(false)
   alt="Faculty member"
 />
         <h4>Shiela Young</h4>
-        <p>Highest Educational Attainment</p>
-        <p>Position or Designation</p>
+        <p>Department Head</p>
       </div>
 
       <div class="faculty-card">
@@ -146,14 +145,13 @@ const menuOpen = ref(false)
   alt="Faculty member"
 />
         <h4>Katrina Cruz</h4>
-        <p>Highest Educational Attainment</p>
-        <p>Position or Designation</p>
+        <p>Associate Professor</p>
       </div>
     </div>
   </div>
 
   <div class="department">
-    <h3>Department 2</h3>
+    <h3>Staff</h3>
 
     <div class="faculty-list">
       <div class="faculty-card">
@@ -163,8 +161,7 @@ const menuOpen = ref(false)
   alt="Faculty member"
 />
         <h4>Arthur Tan</h4>
-        <p>Highest Educational Attainment</p>
-        <p>Position or Designation</p>
+        <p>Computer Laboratory Coordinator</p>
       </div>
     </div>
   </div>
