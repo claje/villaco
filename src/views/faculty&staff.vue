@@ -1,11 +1,15 @@
 
 <script setup>
-import faculty1 from '../image/faculty1.jpg'
-import faculty2 from '../image/faculty2.jpg'
-import faculty3 from '../image/faculty3.jpg'
+import deanPhoto from '../image/dean.png'
+import dh from '../image/dh.jpg'
+import dh2 from '../image/dh2.jpg'
+import dh3 from '../image/dh3.jpg'
+import fac1 from '../image/fac1.jpg'
+import fac2 from '../image/fac2.jpg'
+import fac3 from '../image/fac3.jpg'
 import staff1 from '../image/staff1.jpg'
 import staff2 from '../image/staff2.jpg'
-import staff3 from '../image/staff3.jpg'
+
 </script>
 
 <template>
@@ -34,7 +38,6 @@ import staff3 from '../image/staff3.jpg'
         >
           <img :src="member.image" :alt="member.name" />
           <h4>{{ member.name }}</h4>
-          <p>{{ member.role }}</p>
           <p>{{ member.department }}</p>
         </article>
       </div>
@@ -54,7 +57,7 @@ import staff3 from '../image/staff3.jpg'
           <img :src="member.image" :alt="member.name" />
           <h4>{{ member.name }}</h4>
           <p>{{ member.role }}</p>
-          <p>{{ member.department }}</p>
+
         </article>
       </div>
     </div>

@@ -3,15 +3,19 @@
 import { ref } from 'vue'
 
 import ccsLogo from './image/ccs-logo.jpg'
-import faculty1 from './image/faculty1.jpg'
-import faculty2 from './image/faculty2.jpg'
-import faculty3 from './image/faculty3.jpg'
+import deanPhoto from './image/dean.png'
+import dh from './image/dh.jpg'
+import dh2 from './image/dh2.jpg'
+import dh3 from './image/dh3.jpg'
+import fac1 from './image/fac1.jpg'
+import fac2 from './image/fac2.jpg'
+import fac3 from './image/fac3.jpg'
+import staff1 from './image/staff1.jpg'
+import staff2 from './image/staff2.jpg'
 import cisco from './image/cisco.png'
 import lenovo from './image/lenovo.jpg'
 import oracle from './image/oracle.png'
-import staff1 from './image/staff1.jpg'
-import staff2 from './image/staff2.jpg'
-import staff3 from './image/staff3.jpg'
+
 
 const menuOpen = ref(false)
 
@@ -39,45 +43,63 @@ const programs = [
 ]
 
 
+const dean = [
+  {
+    name: 'Ma. Christina Quijano',
+    role: 'Dean',
+    department: 'College of Computer Studies',
+    image: deanPhoto
+  }
+]
+
+const departmentHeads = [
+  {
+    name: 'Rea Balontong',
+    role: 'Department Head',
+    department: 'IT AND IS',
+    image: dh
+  },
+  {
+    name: 'Marjee Rose Parenno',
+    role: 'Program Coordinator',
+    department: 'BSIT, BSDMIA, AND MSCS',
+    image: dh2
+  },
+  {
+    name: 'Lennon Pajar',
+    role: 'Computer Laboratory Coordinator',
+    image: dh3
+  }
+]
+
 const faculty = [
   {
-    name: 'Shiela Yu',
-    role: 'Professor',
-    department: 'Computer Science',
-    image: faculty1
+    name: 'Leo Paulo Beldia',
+    department: 'IT AND BSIS',
+    image: fac1
   },
   {
-    name: 'Ana Reyes',
-    role: 'Associate Professor',
-    department: 'Information Technology',
-    image: faculty2
+    name: 'Rodolfo Eregia',
+    department: 'BSIT AND BSIS',
+    image: fac2
   },
   {
-    name: 'James Cruz',
-    role: 'Assistant Professor',
-    department: 'Data Analytics',
-    image: faculty3
+    name: 'Ma. Shiela Sapul',
+    department: 'BSCS',
+    image: fac3
   }
 ]
 
 const staff = [
   {
-    name: 'Maria Lopez',
-    role: 'Administrative Officer',
-    department: 'College Operations',
+    name: 'A.m.p Latter Taasan',
+    role: 'Computer Laboratory Technician',
     image: staff1
   },
   {
-    name: 'Daniel Santos',
-    role: 'IT Support Specialist',
-    department: 'Technical Support',
+    name: 'Chrislyn Catano',
+    role: 'Secretary',
     image: staff2
-  },
-  {
-    name: 'Angela Rivera',
-    role: 'Laboratory Technician',
-    department: 'Computer Labs',
-    image: staff3
   }
 ]
 
@@ -159,56 +181,83 @@ function closeMenu() {
       </section>
 
       
+
 <!-- Section 3: Faculty & Staff -->
 <section id="faculty" class="ccs-section ccs-section-light">
   <div class="ccs-section-heading">
     <p class="ccs-eyebrow">MEET OUR TEAM</p>
     <h2>Faculty &amp; Staff</h2>
-    <p>Meet the people who support our students' learning and development.</p>
+    <p>Meet the dean, department heads, coordinators, faculty, and staff of our college.</p>
   </div>
 
-  <div class="ccs-team-grid">
-
-    <!-- Faculty Panel -->
-    <div class="ccs-team-panel">
-      <h3>Faculty</h3>
-      <p>Our dedicated educators and academic professionals.</p>
-
-      <div class="ccs-member-grid">
-        <article
-          v-for="member in faculty"
-          :key="member.name"
-          class="ccs-faculty-card"
-        >
-          <img :src="member.image" :alt="member.name" />
-          <h4>{{ member.name }}</h4>
-          <p>{{ member.role }}</p>
-          <p>{{ member.department }}</p>
-        </article>
-      </div>
+  <!-- Dean -->
+  <div class="ccs-team-category">
+    <h3>Dean</h3>
+    <div class="ccs-member-grid ccs-dean-grid">
+      <article
+        v-for="member in dean"
+        :key="member.name"
+        class="ccs-faculty-card"
+      >
+        <img :src="member.image" :alt="member.name" />
+        <h4>{{ member.name }}</h4>
+        <p>{{ member.role }}</p>
+        <p>{{ member.department }}</p>
+      </article>
     </div>
+  </div>
 
-    <!-- Staff Panel -->
-    <div class="ccs-team-panel">
-      <h3>Staff</h3>
-      <p>Our support team helps the college run smoothly.</p>
-
-      <div class="ccs-member-grid">
-        <article
-          v-for="member in staff"
-          :key="member.name"
-          class="ccs-faculty-card"
-        >
-          <img :src="member.image" :alt="member.name" />
-          <h4>{{ member.name }}</h4>
-          <p>{{ member.role }}</p>
-          <p>{{ member.department }}</p>
-        </article>
-      </div>
+  <!-- Department Heads and Coordinators -->
+  <div class="ccs-team-category">
+    <h3>Department Heads &amp; Coordinators</h3>
+    <div class="ccs-member-grid">
+      <article
+        v-for="member in departmentHeads"
+        :key="member.name"
+        class="ccs-faculty-card"
+      >
+        <img :src="member.image" :alt="member.name" />
+        <h4>{{ member.name }}</h4>
+        <p>{{ member.role }}</p>
+        <p>{{ member.department }}</p>
+      </article>
     </div>
+  </div>
 
+  <!-- Faculty -->
+  <div class="ccs-team-category">
+    <h3>Faculty</h3>
+    <div class="ccs-member-grid">
+      <article
+        v-for="member in faculty"
+        :key="member.name"
+        class="ccs-faculty-card"
+      >
+        <img :src="member.image" :alt="member.name" />
+        <h4>{{ member.name }}</h4>
+        <p>{{ member.role }}</p>
+        <p>{{ member.department }}</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Staff -->
+  <div class="ccs-team-category">
+    <h3>Staff</h3>
+    <div class="ccs-member-grid ccs-staff-grid">
+      <article
+        v-for="member in staff"
+        :key="member.name"
+        class="ccs-faculty-card"
+      >
+        <img :src="member.image" :alt="member.name" />
+        <h4>{{ member.name }}</h4>
+        <p>{{ member.role }}</p>
+      </article>
+    </div>
   </div>
 </section>
+
 
 
       <!-- Section 4: Partnerships -->
