@@ -583,3 +583,42 @@ body {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
+
+/* Allow the website to scroll vertically */
+html,
+body,
+#app {
+  min-height: 100%;
+  height: auto;
+  margin: 0;
+}
+
+html {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.ccs-page {
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+}
+
+main {
+  min-height: 60vh;
+  height: auto;
+  overflow: visible;
+}
+
+.ccs-footer {
+  margin-top: 0;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
